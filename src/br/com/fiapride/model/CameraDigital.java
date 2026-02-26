@@ -11,19 +11,28 @@ public class CameraDigital {
 		this.memoria = 0.0; 
 	}
 	
-	public void tirarFoto(boolean foto) {
-		if (foto = true) {
-			this.memoria += 5;
-			System.out.println("Foto tirada com sucesso!");
+	public void tirarFoto(double foto) {
+		if (foto == 0) {
+			System.out.println("Tecle 1 para tirar foto!");
 			return;
 		}
-		if (this.memoria > 10) {
-			System.out.println("Mémoria Cheia!!");
+		if (foto == 1) {
+			this.memoria += 5.0;
+			System.out.println("Foto tirada com sucesso! Sua memoria é: " + this.memoria);
 		}
 			
-		
-		
-		
+		}
+	
+	public void gravarVideo(double tempo) {
+		if (tempo > 15.0) {
+			System.out.println("Vídeo maior que 15 minutos!");
+			return;
+		}
+		if (tempo < 15.0) {
+			this.memoria += 6.0;
+			System.out.println("Vídeo gravado com sucesso! Sua memoria é: " + this.memoria);
+		}
 	}
-
 }
+
+

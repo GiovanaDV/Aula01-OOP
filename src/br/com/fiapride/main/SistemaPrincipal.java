@@ -7,6 +7,17 @@ public class SistemaPrincipal {
 	public static void main(String[] args) {
 	//INSTANCIACAO
 	//new = aloca memoria pra um novo obj
+		
+	CameraDigital camera1 = new CameraDigital("Nikon", "Modelo 2.0");
+	System.out.println("Tirando fotos na camera 1");
+	camera1.tirarFoto(1);
+		
+	CameraDigital camera2 = new CameraDigital("Sony", "Modelo 6.0");
+	System.out.println("Gravando video na camera 2");
+	camera2.gravarVideo(10);
+		
+		
+		
 	/*
 	--- OBJ 1 
 	Passageiro passageiro1 = new Passageiro();
