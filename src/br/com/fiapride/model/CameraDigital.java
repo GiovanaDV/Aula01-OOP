@@ -1,10 +1,35 @@
 package br.com.fiapride.model;
 
 public class CameraDigital {
+	
+	//ENCAPSULAMENTO
 	private String marca;
-	private String nomeModelo;
+	private String modelo;
 	private double memoria;
 
+	//CONSTRUTOR
+	public CameraDigital(String marca, String modelo, double memoria) {
+		this.marca = marca;
+		this.modelo = modelo;
+		this.setMemoria(memoria);  //único que pode mudar (set privado)
+		System.out.println("Registro inicial - Marca: " + this.marca + " Modelo: " + this.modelo + " Memória: " + this.memoria);
+	}
+	
+	//GETTERS
+	public String getMarca() {
+		return this.marca;
+	}
+	
+	public String getModelo() {
+		return this.modelo;
+	}
+	
+	public double getMemoria() {
+		return this.memoria;
+	}
+	
+	// COMPORTAMENTO PÚBLICO
+	// consumo de memoria
 	public void tirarFoto(double foto) {
 		if (foto == 0) {
 			System.out.println("Tecle 1 para tirar foto!");
@@ -28,32 +53,7 @@ public class CameraDigital {
 		}
 	}
 	
-	public CameraDigital(String marca, String nomeModelo, double memoria) {
-		this.setMarca(marca);
-		this.setNomeModelo(nomeModelo);
-		this.setMemoria(memoria); 
-	}
-	
-	public String getMarca() {
-		return this.marca;
-	}
-	
-	private void setMarca(String marca) {
-		this.marca = marca;
-	}
-	
-	public String getNomeModelo() {
-		return this.nomeModelo;
-	}
-	
-	private void setNomeModelo(String nomeModelo) {
-		this.nomeModelo = nomeModelo;
-	}
-	
-	public double getMemoria() {
-		return this.memoria;
-	}
-	
+	//SETTERS (apenas memoria - unica que muda de valor)
 	private void setMemoria(double memoria) {
 		if (memoria < 0) {
 			System.out.println("Memória não pode ser negativa!");
@@ -62,8 +62,6 @@ public class CameraDigital {
 		
 		this.memoria = memoria;
 	}
-	
-	
 	
 	
 }
